@@ -1,8 +1,7 @@
 var express = require('express'),
-	homeRoute = express.Router();
+	homeRoute = express.Router(),
+	homeController = require('../controllers/homeController')();
 
-homeRoute.route('/').get(function(req, res) {
-	res.render('index');
-});
+homeRoute.route('/').get(homeController.getIndex);
 
 module.exports = homeRoute;

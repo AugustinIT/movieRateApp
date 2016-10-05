@@ -1,0 +1,14 @@
+{{> header}}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-3 col-md-offset-1">
+			<a href="/movie/{{results._id}}"><img src="{{results.img}}" alt="" class="img-responsive"></a>
+			<a href="/movie/{{results._id}}"><h3>{{results.title}}</h3></a>
+			<p class="text-muted">Cast: </p><p>{{results.cast}}</p>
+		</div>
+		<div class="col-md-5">
+			<p>{{results.description}}</p>
+		</div>
+	</div>
+</div>

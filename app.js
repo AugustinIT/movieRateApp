@@ -5,8 +5,7 @@ var express = require('express'),
 	csrf = require('csurf'),
 	flash = require('connect-flash'),
 	passport = require('passport'),
-	morgan = require('morgan'),
-	mongoose = require('mongoose');
+	morgan = require('morgan');
 
 // Initializing app
 var app = express(),
@@ -18,12 +17,16 @@ app.set('view engine', '.hbs');
 
 // Including the routes
 var homeRoute = require('./routes/homeRoute');
+var movieRoute = require('./routes/movieRoute');
 
 // Settups/Middleware
+app.use(helmet());
 app.use(morgan('dev'));
+app.use(express.static(__dirname + '/public'));
 
 // Routes
 app.use('/', homeRoute);
+app.use('/movie', movieRoute);
 
 // Starting the server
 app.listen(port, function() {

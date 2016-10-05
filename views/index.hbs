@@ -1,1 +1,12 @@
 {{> header}}
+<div class="container">
+	<div class="row">
+		{{#each results}}
+		<div class="col-md-3 col-md-offset-1">
+			<a href="/movie/{{this._id}}"><img src="{{this.img}}" alt="" class="img-responsive"></a>
+			<a href="/movie/{{this._id}}"><h3>{{this.title}}</h3></a>
+			<p class="text-muted">Cast: </p><p>{{this.cast}}</p>
+		</div>
+		{{/each}}
+	</div>
+</div>
