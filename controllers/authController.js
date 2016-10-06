@@ -5,15 +5,12 @@ var authController = function() {
 	};
 
 	var getRegister = function(req, res) {
-		res.redirect('/', {
-			message: req.flash('signUpMessage'),
-			csrfToken: req.csrfToken()
-		});
+		res.redirect('/');
 	};
 
 	return {
 		getIndex: getIndex,
-		getRegister: getRegister,
+		getRegister: getRegister
 	};
 
 };

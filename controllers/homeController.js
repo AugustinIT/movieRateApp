@@ -8,7 +8,8 @@ var homeController = function() {
 			 	if(err) throw err;
 			 	res.render('index', {
 			 		results: results,
-			 		csrfToken: req.csrfToken()
+			 		csrfToken: req.csrfToken(),
+			 		message: req.flash('signUpMessage')
 			 	});
 			 });
 	};
