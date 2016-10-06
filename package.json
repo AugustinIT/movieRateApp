@@ -10,6 +10,7 @@
   "author": "Augustin Chiricescu",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "connect-flash": "^0.1.1",
     "csurf": "^1.9.0",
     "express": "^4.14.0",
