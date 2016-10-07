@@ -9,7 +9,7 @@ var homeController = function() {
 			 	res.render('index', {
 			 		results: results,
 			 		csrfToken: req.csrfToken(),
-			 		message: req.flash('signUpMessage')
+			 		message: req.flash('messageFlash')
 			 	});
 			 });
 	};

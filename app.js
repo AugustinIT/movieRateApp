@@ -24,7 +24,9 @@ mongoose.connect(db);
 // Including the routes
 var homeRoute = require('./routes/homeRoute'),
 	movieRoute = require('./routes/movieRoute'),
-	authRoute = require('./routes/authRoute');
+	authRoute = require('./routes/authRoute'),
+	userRoute = require('./routes/userRoute'),
+	adminRoute = require('./routes/adminRoute');
 
 // Settups/Middleware
 app.use(helmet());
@@ -52,6 +54,8 @@ require('./config/passport')(passport);
 app.use('/', homeRoute);
 app.use('/movie', movieRoute);
 app.use('/auth', authRoute);
+app.use('/user', userRoute);
+app.use('/admin', adminRoute);
 
 // Starting the server
 app.listen(port, function() {

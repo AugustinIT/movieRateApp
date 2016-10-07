@@ -1,16 +1,17 @@
 var authController = function() {
 
-	var getIndex = function(req, res) {
+	var getBack = function(req, res) {
 		res.redirect('/');
 	};
 
-	var getRegister = function(req, res) {
+	var logout = function(req, res) {
+		req.logout();
 		res.redirect('/');
 	};
 
 	return {
-		getIndex: getIndex,
-		getRegister: getRegister
+		getBack: getBack,
+		logout: logout
 	};
 
 };
