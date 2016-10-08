@@ -1,3 +1,11 @@
 .container {
 	margin-top: 6em;
 }
+
+.container .first-page img {
+	margin-top: 2em;
+}
+
+hr {
+	border-bottom: 1px solid #DEDEE0;
+}

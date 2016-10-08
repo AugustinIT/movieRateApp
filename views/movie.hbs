@@ -9,6 +9,27 @@
 		</div>
 		<div class="col-md-5">
 			<p>{{results.description}}</p>
+			<br>
+			<h4>What other people say about this:</h4>
+			{{#each reviews}}
+			<p><i>{{this.review}}</i> - Posted by <strong>{{this.userName}}</strong></p>
+			<hr>
+			{{/each}}
 		</div>
 	</div>
+	{{#if user}}
+	<div class="row">
+		<div class="col-md-3 col-md-offset-1">
+			<h3>Write a review as {{user.username}}</h3>
+			<form method="post" action="/movie/addReview">
+	          <input type="hidden" name="_csrf" value="{{csrfToken}}">
+	          <input type="hidden" name="movieId" value="{{results._id}}">
+	          <div class="form-group">
+	            <textarea name="review" id="review" rows="10" placeholder="Review" required class="form-control"></textarea>
+	          </div>
+	          <button type="submit" class="btn btn-success">Submit review</button>
+	        </form>	
+		</div>
+	</div>
+	{{/if}}
 </div>
