@@ -11,12 +11,7 @@ searchRoute.route('/').get(function(req, res) {
 		}
 	}, function(err, results) {
 		if(err) throw err;
-		var data = [];
-		for(var i = 0; i < results.length; i++) {
-			data.push(results[i].title);
-		}
-		console.log(JSON.stringify(data));
-		res.end(JSON.stringify(data));
+		res.json(results);
 	});
 });
 
