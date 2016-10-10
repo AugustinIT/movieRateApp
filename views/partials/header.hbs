@@ -17,9 +17,9 @@
         <li><a href="#"  data-toggle="modal" data-target="#signInModal">Sign In</a></li>
         <li><a href="#"  data-toggle="modal" data-target="#signUpModal">Sign Up</a></li>
       </ul>
-      <form class="navbar-form navbar-right">
+      <form class="navbar-form navbar-right" method="GET" action="/search">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+          <input type="text" class="form-control typeahead tt-query" spellcheck="false" autocomplete="off" name="searchBox" placeholder="Search">
         </div>
         <button type="submit" class="btn btn-primary">Go</button>
       </form>

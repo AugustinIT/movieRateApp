@@ -26,7 +26,8 @@ var homeRoute = require('./routes/homeRoute'),
 	movieRoute = require('./routes/movieRoute'),
 	authRoute = require('./routes/authRoute'),
 	userRoute = require('./routes/userRoute'),
-	adminRoute = require('./routes/adminRoute');
+	adminRoute = require('./routes/adminRoute'),
+	searchRoute = require('./routes/searchRoute');
 
 // Settups/Middleware
 app.use(helmet());
@@ -56,6 +57,7 @@ app.use('/movie', movieRoute);
 app.use('/auth', authRoute);
 app.use('/user', userRoute);
 app.use('/admin', adminRoute);
+app.use('/search', searchRoute);
 
 // Starting the server
 app.listen(port, function() {
