@@ -1,18 +1,12 @@
 (function() {
 
-	var movieNames = new Bloodhound({
-		  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
-		  queryTokenizer: Bloodhound.tokenizers.whitespace,
-		  remote: {
-		    url: '/search?searchBox=%QUERY',
-		    wildcard: '%QUERY'
-		  }
-	});
-
-	$('.typeahead').typeahead(null, {
+	$('.typeahead').typeahead({
 		name: 'searchBox',
-		source: movieNames,
-		limit: 10
+		source: function(query, process) {
+			$.getJSON('/search', {searchBox: query}, function(data) {
+				return process(data);
+			});
+		}
 	});
 
 })();
