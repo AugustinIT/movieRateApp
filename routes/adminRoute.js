@@ -3,7 +3,7 @@ var express = require('express'),
 	adminController = require('../controllers/adminController')();
 
 function isLoggedIn(req, res, next) {
-	if (req.isAuthenticated()) {
+	if (req.isAuthenticated() && req.user.admin === true) {
 		return next();
 	}
 
