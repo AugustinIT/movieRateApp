@@ -9,3 +9,14 @@
 hr {
 	border-bottom: 1px solid #DEDEE0;
 }
+
+.rate-widget ul li {
+	display: inline-block;
+	font-size: 1.3em;
+	color: #449D44;
+	cursor: pointer;
+}
+
+.rate-widget ul {
+	padding: 0;
+}

@@ -6,12 +6,23 @@
 			<a href="/movie/{{results._id}}"><img src="{{results.img}}" alt="" class="img-responsive"></a>
 			<a href="/movie/{{results._id}}"><h3>{{results.title}}</h3></a>
 			<p class="text-muted">Cast: </p><p>{{results.cast}}</p>
+			<div class="rate-widget">
+				<p class="text-muted">Rating: </p>
+				<ul>
+					<li class="star_1 ratings_stars"><i class="fa fa-star-o" aria-hidden="true"></i></li>
+					<li class="star_2 ratings_stars"><i class="fa fa-star-o" aria-hidden="true"></i></li>
+					<li class="star_3 ratings_stars"><i class="fa fa-star-o" aria-hidden="true"></i></li>
+					<li class="star_4 ratings_stars"><i class="fa fa-star-o" aria-hidden="true"></i></li>
+					<li class="star_5 ratings_stars"><i class="fa fa-star-o" aria-hidden="true"></i></li>
+				</ul>
+				<p>{{avgRating}}</p>
+			</div>
 		</div>
 		<div class="col-md-5">
 			<p>{{results.description}}</p>
 			<br>
-			<h4>What other people say about this:</h4>
 			{{#each reviews}}
+			<h4>What other people say about this:</h4>
 			<p><i>{{this.review}}</i> - Posted by <strong>{{this.userName}}</strong></p>
 			<hr>
 			{{/each}}

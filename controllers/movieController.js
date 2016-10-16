@@ -17,7 +17,8 @@ var movieController = function() {
 					results: movies,
 					csrfToken: req.csrfToken(),
 					user: req.user,
-					reviews: reviews
+					reviews: reviews,
+					avgRating: (movies.ratings / movies.ratingNumber).toFixed(2)
 				});
 				
 			});

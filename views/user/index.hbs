@@ -22,3 +22,16 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <ul>
+        {{#each reviews}}
+          <li><a href="/movie/{{this.movieId}}"><strong>{{this.review}}</strong></a></li>
+        {{/each}}
+      </ul>
+      
+    </div>
+  </div>
+</div>

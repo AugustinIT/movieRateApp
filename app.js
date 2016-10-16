@@ -27,7 +27,8 @@ var homeRoute = require('./routes/homeRoute'),
 	authRoute = require('./routes/authRoute'),
 	userRoute = require('./routes/userRoute'),
 	adminRoute = require('./routes/adminRoute'),
-	searchRoute = require('./routes/searchRoute');
+	searchRoute = require('./routes/searchRoute'),
+	ratingRoute = require('./routes/ratingRoute');
 
 // Settups/Middleware
 app.use(helmet());
@@ -37,6 +38,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
+
+// Ignoring CSRF check
+app.use('/rating', ratingRoute);
+
+// Settups/Middleware
 app.use(session({
 	secret: "movieRateApp",
 	resave: true,
